@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import App from '../App'
 
-Vue.use(Router)
+const index = r => require.ensure([], () => r(require('../pages/start/index')), 'index')
 
-export default new Router({
-  routes: [
+export default [{
+  path: '/',
+  component: App,
+  children: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
-})
+      path: '',
+      name: 'index',
+      component: index
+    } ]
+}
+]
