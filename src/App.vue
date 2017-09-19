@@ -3,36 +3,45 @@
     <transition :name='transitionName'>
       <router-view class="router-view"></router-view>
     </transition>
+    <loading v-model="isLoading"></loading>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      transitionName: ''
-    }
-  },
-  mounted () {
-  },
-  watch: {
-    '$route' (to, from) { // 监听路由是前进还是后退
-      if (!to.path) {
-        to.path = +new Date() + 1
+  import { Loading } from 'vux'
+  import { mapState } from 'vuex'
+  export default {
+    name: 'app',
+    components: {
+      Loading
+    },
+    data () {
+      return {
+        transitionName: ''
       }
-      if (!from.path) {
-        from.path = +new Date()
-      }
+    },
+    computed: {
+      ...mapState({
+        isLoading: state => state.isLoading // 直接从state中拿状态，不需要在data定义
+      })
+    },
+    watch: {
+      '$route' (to, from) { // 监听路由是前进还是后退
+        if (!to.path) {
+          to.path = +new Date() + 1
+        }
+        if (!from.path) {
+          from.path = +new Date()
+        }
 
-      if (to.path > from.path) {
-        this.transitionName = 'slide-forward'
-      } else {
-        this.transitionName = 'slide-back'
+        if (to.path > from.path) {
+          this.transitionName = 'slide-forward'
+        } else {
+          this.transitionName = 'slide-back'
+        }
       }
     }
   }
-}
 </script>
 
 <style lang="less">

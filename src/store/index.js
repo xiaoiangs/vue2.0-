@@ -7,6 +7,7 @@ import getters from './getters'
 Vue.use(Vuex)
 
 const state = {
+  isLoading: ''
 }
 
 export default new Vuex.Store({
