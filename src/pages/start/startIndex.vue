@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'index',
+    name: 'startIndex',
     data () {
       return {
         msg: '。。。'
