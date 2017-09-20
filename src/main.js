@@ -5,6 +5,7 @@ import App from './App'
 import routes from './router/index' // 引入路由配置
 import store from './store/' // 引入store
 import { AjaxPlugin } from 'vux' // 请求数据用
+import interceptor from './api/interceptor.js'
 Vue.use(AjaxPlugin)
 Vue.use(VueRouter)
 
@@ -28,5 +29,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  interceptor,
   render: h => h(App)
 }).$mount('#app-box')
