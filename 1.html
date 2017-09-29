@@ -1,0 +1,37 @@
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>`
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<div>
+  <p>123</p>
+  <p>123</p>
+  <p>123</p>
+  <p>123</p>
+  <p>123</p>
+  <p>123</p>
+  <p id = 'lastP'>最后一个123</p>
+</div>
+
+<input type="text"/>
+<a href="#lastP">定位</a>
+</body>
+<script>
+  var aA = document.getElementsByTagName('a');
+  var aInput = document.getElementsByTagName('input');
+  aInput[0].focus();
+  aA[0].onclick = function(){
+    aInput[0].focus();
+  }
+</script>
+</html>
