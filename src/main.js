@@ -8,7 +8,7 @@ import { AjaxPlugin } from 'vux' // 请求数据用
 import interceptor from './api/interceptor.js'
 Vue.use(AjaxPlugin)
 Vue.use(VueRouter)
-
+require('./mock.js') // 引入mock数据
 const router = new VueRouter({
   routes,
   mode: 'hash'

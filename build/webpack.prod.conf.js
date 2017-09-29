@@ -46,8 +46,8 @@ var webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
-    // generate dist start.html with correct asset hash for caching.
-    // you can customize output by editing /start.html
+    // generate dist start.json.html with correct asset hash for caching.
+    // you can customize output by editing /start.json.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
