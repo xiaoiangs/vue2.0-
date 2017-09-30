@@ -8,5 +8,18 @@
   <body>
     <div id="app-box"></div>
     <!-- built files will be auto injected -->
+  <script>
+    !(function (doc, win) {
+      var docEle, evt, fn
+      docEle = doc.documentElement
+      evt = 'onorientationchange' in window ? 'orientationchange' : 'resize'
+      fn = function () {
+        var width = docEle.clientWidth
+        width && (docEle.style.fontSize = 16 * (width / 375) + 'px')
+      }
+      win.addEventListener(evt, fn, false)
+      doc.addEventListener('DOMContentLoaded', fn, false)
+    }(document, window))
+  </script>
   </body>
 </html>
