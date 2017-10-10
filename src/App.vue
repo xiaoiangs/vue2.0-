@@ -46,7 +46,9 @@
 
 <style lang="less">
   @import './style/common.css'; // app 中引入reset
+  @import './style/change.vux.css'; // app 中引入修改vux的css文件
   .router-view { //路由class
+    width:100%;
     position: absolute;
     top: 0;
     left: 0;

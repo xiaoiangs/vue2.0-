@@ -1,12 +1,18 @@
 <template>
   <div>
-    <div>分支首次push</div>
+    <div>
+      <swiper></swiper>
+    </div>
   </div>
 </template>
 
 <script>
+  import swiper from './children/swiper'
   export default {
     name: 'startIndex',
+    components: {
+      swiper
+    },
     data () {
       return {
         msg: '。。。'
@@ -17,7 +23,6 @@
         this.$http('http://g.cn', 'type=top&key=123456')
           .then(res => {
             console.log(res)
-            this.newsListShow = res.articles
           })
       }
     },
