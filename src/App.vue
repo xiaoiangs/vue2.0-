@@ -4,16 +4,19 @@
       <router-view class="router-view"></router-view>
     </transition>
     <loading v-model="isLoading"></loading>
+    <foot></foot>
   </div>
 </template>
 
 <script>
   import { Loading } from 'vux'
   import { mapState } from 'vuex'
+  import Foot from '@/components/foot'
   export default {
     name: 'app',
     components: {
-      Loading
+      Loading,
+      Foot
     },
     data () {
       return {
