@@ -14,12 +14,12 @@ export default [{
       component: startIndex
     },
     {
-      path: 'me',
+      path: '/me',
       name: 'ne',
       component: me
     },
     {
-      path: 'second',
+      path: '/second',
       name: 'second',
       component: second
     }

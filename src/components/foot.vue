@@ -2,17 +2,17 @@
   <div>
     <tabbar>
       <div class="foot-container">
-        <div class="item" :class="{'item-active':selected}" @click="toFirst">
+        <div class="item" :class="{'item-active':first}" @click="toFirst">
           <span class="item-span iconfont icon-qiche"></span>
           <span class="item-text">租车</span>
         </div>
 
-        <div class="item" :class="{'item-active':!selected}" @click="toSecond">
+        <div class="item" :class="{'item-active':second}" @click="toSecond">
           <span class="item-span iconfont icon-tianqi"></span>
           <span class="item-text">天气</span>
         </div>
 
-        <div class="item" :class="{'item-active':!selected}" @click="toThird">
+        <div class="item" :class="{'item-active':third}" @click="toThird">
           <span class="item-span iconfont icon-wode"></span>
           <span class="item-text">我的</span>
         </div>
@@ -29,7 +29,9 @@
     },
     data () {
       return {
-        selected: true
+        first: true,
+        second: false,
+        third: false
       }
     },
     methods: {
@@ -41,7 +43,30 @@
       },
       toThird () {
         this.$router.push('me')
+      },
+//      监听路由
+      listenRoute () {
+        switch (this.$route.path) {
+          case '/':
+            this.first = true
+            this.second = false
+            this.third = false
+            break
+          case '/second':
+            this.first = false
+            this.second = true
+            this.third = false
+            break
+          case '/me':
+            this.first = false
+            this.second = false
+            this.third = true
+            break
+        }
       }
+    },
+    watch: {
+      '$route': 'listenRoute'
     }
   }
 </script>
