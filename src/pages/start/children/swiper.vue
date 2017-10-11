@@ -1,18 +1,16 @@
 <template>
   <div>
-    <swiper auto loop :list="list"></swiper>
+    <swiper auto loop :list="list" :show-dots="false"></swiper>
   </div>
 </template>
 
 <script>
   import { Swiper, GroupTitle, SwiperItem, XButton, Divider } from 'vux'
   const baseList = [{
-    url: '/me',
+    url: '/second',
     img: 'https://static.vux.li/demo/1.jpg'
-  }, {
-    url: '/me',
-    img: 'https://static.vux.li/demo/2.jpg'
-  }, {
+  },
+  {
     url: '/me',
     img: 'https://static.vux.li/demo/3.jpg'
   }]

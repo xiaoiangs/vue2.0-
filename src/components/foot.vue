@@ -80,6 +80,7 @@
       width:33.3%;
       height:0.6rem;
       position:relative;
+      color:#999;
       /*字体图标*/
       .item-span{
         position:absolute;
@@ -99,7 +100,7 @@
   }
   /*当前选中*/
   .item-active{
-    color:#6cc6dc;
+    color:#6cc6dc !important;
   }
   @media screen and (min-width:385px) and (max-width:415px){.item-text{letter-spacing: 0.04rem !important;}}
   @media screen and (min-width:416px) and (max-width:435px){.item-text{letter-spacing: 0.05rem !important;}}
