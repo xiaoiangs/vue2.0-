@@ -7,13 +7,13 @@
 <script>
   import { Swiper, GroupTitle, SwiperItem, XButton, Divider } from 'vux'
   const baseList = [{
-    url: '/list',
+    url: '/me',
     img: 'https://static.vux.li/demo/1.jpg'
   }, {
-    url: '/list',
+    url: '/me',
     img: 'https://static.vux.li/demo/2.jpg'
   }, {
-    url: '/list',
+    url: '/me',
     img: 'https://static.vux.li/demo/3.jpg'
   }]
   export default {

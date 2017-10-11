@@ -1,7 +1,8 @@
 import App from '../App'
 
 const startIndex = r => require.ensure([], () => r(require('../pages/start/startIndex')), 'startIndex')
-const listIndex = r => require.ensure([], () => r(require('../pages/list/listIndex')), 'listIndex')
+const second = r => require.ensure([], () => r(require('../pages/second/second')), 'second')
+const me = r => require.ensure([], () => r(require('../pages/me/me')), 'me')
 
 export default [{
   path: '/',
@@ -13,9 +14,14 @@ export default [{
       component: startIndex
     },
     {
-      path: 'listIndex',
-      name: 'listIndex',
-      component: listIndex
+      path: 'me',
+      name: 'ne',
+      component: me
+    },
+    {
+      path: 'second',
+      name: 'second',
+      component: second
     }
   ]
 }

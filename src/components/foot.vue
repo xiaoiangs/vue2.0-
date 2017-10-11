@@ -2,17 +2,17 @@
   <div>
     <tabbar>
       <div class="foot-container">
-        <div class="item">
+        <div class="item" :class="{'item-active':selected}" @click="toFirst">
           <span class="item-span iconfont icon-qiche"></span>
           <span class="item-text">租车</span>
         </div>
 
-        <div class="item">
+        <div class="item" :class="{'item-active':!selected}" @click="toSecond">
           <span class="item-span iconfont icon-tianqi"></span>
           <span class="item-text">天气</span>
         </div>
 
-        <div class="item">
+        <div class="item" :class="{'item-active':!selected}" @click="toThird">
           <span class="item-span iconfont icon-wode"></span>
           <span class="item-text">我的</span>
         </div>
@@ -26,6 +26,22 @@
   export default {
     components: {
       Tabbar
+    },
+    data () {
+      return {
+        selected: true
+      }
+    },
+    methods: {
+      toFirst () {
+        this.$router.push('/')
+      },
+      toSecond () {
+        this.$router.push('second')
+      },
+      toThird () {
+        this.$router.push('me')
+      }
     }
   }
 </script>
@@ -56,7 +72,10 @@
       }
     }
   }
-
+  /*当前选中*/
+  .item-active{
+    color:#6cc6dc;
+  }
   @media screen and (min-width:385px) and (max-width:415px){.item-text{letter-spacing: 0.04rem !important;}}
   @media screen and (min-width:416px) and (max-width:435px){.item-text{letter-spacing: 0.05rem !important;}}
   @media screen and (min-width:436px) and (max-width:460px){.item-text{letter-spacing: 0.06rem !important;}}

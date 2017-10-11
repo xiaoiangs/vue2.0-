@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>listIndex</div>
+    <div>我的</div>
   </div>
 </template>
 
